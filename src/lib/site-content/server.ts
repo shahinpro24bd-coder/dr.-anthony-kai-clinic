@@ -5,6 +5,9 @@ import { SITE_LOGO_URL } from "./branding";
 export const SITE_LANGS = ["en", "ar"] as const;
 export type SiteLang = (typeof SITE_LANGS)[number];
 
+/** Language served when the visitor has not chosen one (Lebanon: Arabic). */
+export const DEFAULT_LANG: SiteLang = "ar";
+
 export function isSiteLang(value: string): value is SiteLang {
   return (SITE_LANGS as readonly string[]).includes(value);
 }

@@ -1,4 +1,4 @@
-import { getContentSnapshot, isSiteLang, SITE_LANGS, type SiteLang } from "./server";
+import { getContentSnapshot, isSiteLang, DEFAULT_LANG, SITE_LANGS, type SiteLang } from "./server";
 import { PAGE_SOURCE } from "./pages.server";
 import { renderPage } from "./transform";
 

@@ -35,10 +35,26 @@ describe("public languages", () => {
 });
 
 describe("default language", () => {
-  it("serves English when no language is chosen", async () => {
+  it("serves Arabic (Lebanon) when no language is chosen", async () => {
     const { renderSitePage } = await import("./render.server");
     const res = await renderSitePage(new Request("http://x/index.html"), "index");
-    expect(await res.text()).toContain('window.__SITE_LANG__="en"');
+    const html = await res.text();
+    expect(html).toContain('window.__SITE_LANG__="ar"');
+    expect(html).toContain('lang="ar" dir="rtl"');
+  });
+
+  it("treats the plain URL as Arabic and English as ?lang=en", async () => {
+    const { renderSitePage } = await import("./render.server");
+    const res = await renderSitePage(new Request("http://x/index.html"), "index");
+    const html = await res.text();
+    expect(html).toContain('<link rel="alternate" hreflang="ar" href="http://x/index.html" />');
+    expect(html).toContain('<link rel="alternate" hreflang="en" href="http://x/index.html?lang=en" />');
+  });
+
+  it("falls back to Arabic in the browser scripts too", () => {
+    for (const file of ["public/js/i18n.js", "public/js/speed.js", "public/js/local-content.js"]) {
+      expect(readFileSync(file, "utf8")).toContain('window.__SITE_LANG__ || "ar"');
+    }
   });
 
   it("keeps cookie-selected pages out of shared caches", async () => {
@@ -50,7 +66,7 @@ describe("default language", () => {
     expect(res.headers.get("Cache-Control")).toBe("private, no-cache");
     expect(res.headers.get("Vary")).toBe("Cookie");
     const fresh = await renderSitePage(new Request("http://x/index.html"), "index");
-    expect(await fresh.text()).toContain('window.__SITE_LANG__="en"');
+    expect(await fresh.text()).toContain('window.__SITE_LANG__="ar"');
   });
 
   it("switches explicitly to Arabic even with a remembered English preference", async () => {

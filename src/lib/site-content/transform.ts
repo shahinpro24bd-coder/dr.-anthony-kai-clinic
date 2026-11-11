@@ -1,5 +1,6 @@
 import { parse, serialize } from "parse5";
 import { imageSlot, normalizeText, textKey } from "./keys";
+import { DEFAULT_LANG } from "./server";
 
 type AnyNode = {
   nodeName: string;
