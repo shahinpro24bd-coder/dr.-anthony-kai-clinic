@@ -1238,28 +1238,29 @@
             
             // Validate required fields
             if (!name) {
-                showNotification('অনুগ্রহ করে আপনার পূর্ণ নাম লিখুন', 'error');
+                showNotification(window.__SITE_LANG__ === 'ar' ? 'يرجى إدخال اسمك الكامل' : 'Please enter your full name', 'error');
                 document.getElementById('appo14').focus();
                 return;
             }
             
             if (!phone) {
-                showNotification('অনুগ্রহ করে আপনার ফোন নম্বর লিখুন', 'error');
+                showNotification(window.__SITE_LANG__ === 'ar' ? 'يرجى إدخال رقم هاتفك' : 'Please enter your phone number', 'error');
                 document.getElementById('appo15').focus();
                 return;
             }
             
             // Format the message
-            let formattedMessage = "অ্যাপয়েন্টমেন্ট অনুরোধ:\n";
-            formattedMessage += `নাম: ${name}\n`;
-            formattedMessage += `ফোন: ${phone}\n`;
+            const arabic = window.__SITE_LANG__ === 'ar';
+            let formattedMessage = arabic ? "طلب موعد:\n" : "Appointment Request:\n";
+            formattedMessage += `${arabic ? 'الاسم الكامل' : 'Full Name'}: ${name}\n`;
+            formattedMessage += `${arabic ? 'الهاتف' : 'Phone'}: ${phone}\n`;
             
             if (date) {
-                formattedMessage += `তারিখ: ${formatDate(date)}\n`;
+                formattedMessage += `${arabic ? 'التاريخ' : 'Date'}: ${formatDate(date)}\n`;
             }
             
             if (message) {
-                formattedMessage += `সমস্যা: ${message}`;
+                formattedMessage += `${arabic ? 'الرسالة' : 'Message'}: ${message}`;
             }
             
             // Encode the message
@@ -1272,7 +1273,7 @@
             const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
             
             // Show success notification
-            showNotification('হোয়াটসঅ্যাপে পুনঃনির্দেশিত হচ্ছে...', 'success');
+            showNotification(arabic ? 'جارٍ تحويلك إلى واتساب...' : 'Redirecting you to WhatsApp...', 'success');
             
             // Open WhatsApp in a new tab after a short delay
             setTimeout(() => {
@@ -1283,7 +1284,7 @@
         function formatDate(dateString) {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const date = new Date(dateString);
-            return date.toLocaleDateString('bn-BD', options);
+            return date.toLocaleDateString(window.__SITE_LANG__ === 'ar' ? 'ar-LB' : 'en-GB', options);
         }
 
         // Add enter key support for form submission
