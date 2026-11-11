@@ -366,3 +366,5 @@ body .treatments-premium-section .ser13,
 body .treatments-premium-section .ser5{unicode-bidi:plaintext}
 html[dir="rtl"] body .cred-custom-card::before{right:auto;left:1.2rem}
 html[dir="rtl"] body .membership-card::before{right:auto;left:.7rem}
+html[dir="rtl"] .breadcrumb-item+.breadcrumb-item{padding-left:0;padding-right:var(--bs-breadcrumb-item-padding-x,.5rem)}
+html[dir="rtl"] .breadcrumb-item+.breadcrumb-item::before{float:right;padding-right:0;padding-left:var(--bs-breadcrumb-item-padding-x,.5rem)}
