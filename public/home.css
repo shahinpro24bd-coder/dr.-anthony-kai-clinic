@@ -2164,3 +2164,39 @@ html[lang="ar"] .hero-reference-word {
     .navbar-actions { display: block; }
     .sticky-top .navbar .btn-primary { width: 100%; }
 }
+
+/* Phone hero copy: readable sizes that still clear the portrait. */
+@media (max-width: 620px) {
+    .hero-reference { min-height: 860px; }
+    .hero-reference-copy { top: 54px; }
+    .hero-reference-kicker { margin-bottom: 16px; padding: 8px 13px; font-size: 10px; letter-spacing: .06em; }
+    .hero-reference-kicker i { font-size: 12px; }
+    .hero-reference-copy h1 { max-width: none; font-size: 46px; line-height: .98; }
+    .hero-reference-copy .hero-reference-role {
+        max-width: none;
+        margin-top: 18px;
+        font-size: 11.5px;
+        letter-spacing: .12em;
+        line-height: 1.75;
+    }
+    .hero-reference-cta { margin-top: 22px; font-size: 13px; }
+    .hero-reference-stat span { font-size: 9px; letter-spacing: .02em; }
+    .hero-reference-location { font-size: 12px; }
+
+    html[lang="ar"] .hero-reference { min-height: 890px; }
+    html[lang="ar"] .hero-reference-kicker { font-size: 13px; letter-spacing: 0; }
+    html[lang="ar"] .hero-reference-copy h1 { font-size: 44px; line-height: 1.25; }
+    html[lang="ar"] .hero-reference-copy .hero-reference-role { font-size: 15px; letter-spacing: 0; line-height: 1.7; }
+    html[lang="ar"] .hero-reference-cta { font-size: 15px; }
+    html[lang="ar"] .hero-reference-stat span { font-size: 11px; letter-spacing: 0; }
+    html[lang="ar"] .hero-reference-location { font-size: 13px; }
+}
+
+@media (max-width: 380px) {
+    .hero-reference { min-height: 830px; }
+    .hero-reference-copy { top: 48px; }
+    .hero-reference-copy h1 { font-size: 41px; }
+    .hero-reference-stat span { font-size: 8.5px; }
+    html[lang="ar"] .hero-reference { min-height: 860px; }
+    html[lang="ar"] .hero-reference-copy h1 { font-size: 40px; }
+}
