@@ -15,9 +15,12 @@
     var progress = root.querySelector("[data-reels-progress]");
     if (!track) return;
 
+    /* Right-to-left pages scroll toward negative scrollLeft values. */
+    var rtl = window.getComputedStyle(track).direction === "rtl";
+
     function updateControls() {
       var max = Math.max(0, track.scrollWidth - track.clientWidth);
-      var position = Math.max(0, Math.min(max, track.scrollLeft));
+      var position = Math.max(0, Math.min(max, Math.abs(track.scrollLeft)));
       if (previous) previous.disabled = position <= 3;
       if (next) next.disabled = position >= max - 3;
       if (progress) {
@@ -34,7 +37,7 @@
     }
 
     function move(direction) {
-      track.scrollBy({ left: direction * pageStep(), behavior: "smooth" });
+      track.scrollBy({ left: (rtl ? -direction : direction) * pageStep(), behavior: "smooth" });
     }
 
     function resetMedia(media) {

@@ -681,3 +681,8 @@
     animation-duration: 1.5s;
   }
 }
+
+/* Arabic reads right-to-left: arrows point the way the cards move. */
+html[dir="rtl"] .reels-arrow svg {
+  transform: scaleX(-1);
+}
