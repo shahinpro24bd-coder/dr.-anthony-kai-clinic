@@ -2165,9 +2165,9 @@ html[lang="ar"] .hero-reference-word {
     .sticky-top .navbar .btn-primary { width: 100%; }
 }
 
-/* Phone hero copy: readable sizes and a balanced block above the portrait. */
+/* Phone hero copy: readable sizes that still clear the portrait. */
 @media (max-width: 620px) {
-    .hero-reference { min-height: 900px; }
+    .hero-reference { min-height: 860px; }
     .hero-reference-copy { top: 54px; }
     .hero-reference-kicker { margin-bottom: 16px; padding: 8px 13px; font-size: 10px; letter-spacing: .06em; }
     .hero-reference-kicker i { font-size: 12px; }
@@ -2179,32 +2179,22 @@ html[lang="ar"] .hero-reference-word {
         letter-spacing: .12em;
         line-height: 1.75;
     }
-    .hero-reference-copy .hero-reference-description {
-        display: block;
-        max-width: 330px;
-        margin-top: 14px;
-        font-size: 14px;
-        line-height: 1.6;
-        opacity: .9;
-    }
     .hero-reference-cta { margin-top: 22px; font-size: 13px; }
-    .hero-reference-stat span { font-size: 9.5px; letter-spacing: .02em; }
+    .hero-reference-stat span { font-size: 9px; letter-spacing: .02em; }
     .hero-reference-location { font-size: 12px; }
 
     html[lang="ar"] .hero-reference-kicker { font-size: 13px; letter-spacing: 0; }
     html[lang="ar"] .hero-reference-copy h1 { font-size: 44px; line-height: 1.25; }
     html[lang="ar"] .hero-reference-copy .hero-reference-role { font-size: 15px; letter-spacing: 0; line-height: 1.7; }
-    html[lang="ar"] .hero-reference-copy .hero-reference-description { font-size: 15px; line-height: 1.75; }
     html[lang="ar"] .hero-reference-cta { font-size: 15px; }
-    html[lang="ar"] .hero-reference-stat span { font-size: 12px; letter-spacing: 0; }
+    html[lang="ar"] .hero-reference-stat span { font-size: 11px; letter-spacing: 0; }
     html[lang="ar"] .hero-reference-location { font-size: 13px; }
 }
 
 @media (max-width: 380px) {
-    .hero-reference { min-height: 870px; }
+    .hero-reference { min-height: 830px; }
     .hero-reference-copy { top: 48px; }
     .hero-reference-copy h1 { font-size: 41px; }
-    .hero-reference-copy .hero-reference-description { font-size: 13.5px; }
-    .hero-reference-stat span { font-size: 9px; }
+    .hero-reference-stat span { font-size: 8.5px; }
     html[lang="ar"] .hero-reference-copy h1 { font-size: 40px; }
 }
