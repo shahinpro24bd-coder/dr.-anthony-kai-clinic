@@ -289,7 +289,7 @@
           waits.push(Promise.all([
             document.fonts.load('400 16px "Tajawal"', "\u0627"),
             document.fonts.load('700 16px "Tajawal"', "\u0627"),
-            document.fonts.load('700 32px "Amiri"', "\u0627")
+            document.fonts.load('800 32px "Tajawal"', "\u0627")
           ]).catch(function () {}));
         }
         return Promise.race([

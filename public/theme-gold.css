@@ -369,7 +369,7 @@ html[lang="ar"] body *:not(i):not([class*="bi-"]):not([class*="fa-"]):not(.fa):n
 html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3,
 html[lang="ar"] h1 *, html[lang="ar"] h2 *, html[lang="ar"] h3 *,
 html[lang="ar"] [class*="font-dancing"], html[lang="ar"] [class*="playfair"] {
-  font-family: "Amiri", "Tajawal", serif !important;
+  font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif !important;
   font-weight: 700 !important;
 }
 html[lang="ar"] body { line-height: 1.8; -webkit-font-smoothing: antialiased; }
