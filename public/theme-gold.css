@@ -367,11 +367,11 @@ html[lang="ar"] body *:not(i):not([class*="bi-"]):not([class*="fa-"]):not(.fa):n
   font-style: normal !important;
 }
 html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3,
-html[lang="ar"] h1 *, html[lang="ar"] h2 *, html[lang="ar"] h3 *,
 html[lang="ar"] [class*="font-dancing"], html[lang="ar"] [class*="playfair"] {
-  font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif !important;
   font-weight: 700 !important;
 }
+html[dir="rtl"] .breadcrumb-item+.breadcrumb-item{padding-left:0;padding-right:.5rem}
+html[dir="rtl"] .breadcrumb-item+.breadcrumb-item::before{float:right;padding-right:0;padding-left:.5rem}
 html[lang="ar"] body { line-height: 1.8; -webkit-font-smoothing: antialiased; }
 html[lang="ar"] p, html[lang="ar"] li { font-size: max(1em, 16px); font-weight: 400; }
 html[lang="ar"] .lang-toggle, html[lang="ar"] .lang-menu a { font-size: 13px; }
