@@ -137,7 +137,7 @@ function LoginScreen({ onSuccess }: { onSuccess: () => void }) {
 function Editor({ onSignOut, onBack, initialPage }: { onSignOut: () => void; onBack: () => void; initialPage: string }) {
   const frameRef = useRef<HTMLIFrameElement>(null);
   const [page, setPage] = useState<string>(initialPage);
-  const [lang, setLang] = useState<string>("en");
+  const [lang, setLang] = useState<string>("ar");
   const [dirty, setDirty] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>({ tone: "idle", message: "" });
   const [images, setImages] = useState<{ slot: string; url: string }[]>([]);
