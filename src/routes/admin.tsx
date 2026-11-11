@@ -254,7 +254,7 @@ function Editor({ onSignOut, onBack, initialPage }: { onSignOut: () => void; onB
           {(
             [
               ["en", "English"],
-              ["he", "Hebrew"],
+              ["ar", "Arabic"],
             ] as const
           ).map(([code, label]) => (
             <Button
