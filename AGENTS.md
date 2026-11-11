@@ -31,3 +31,5 @@ use the editor.
 
 - Vercel builds use Nitro's Vercel server preset; other builds retain the platform default, because public HTML requires request-time language rendering.
 - Language-switch and internal navigation URLs carry an explicit language; cookie-selected responses are private to prevent cross-language CDN/browser cache reuse.
+- Site copy lives in `src/site/*.html`; `src/lib/site-content/fallback.generated.json` is regenerated from those pages (English source text + Russian per content key), so edit the HTML first and rebuild the snapshot together.
+- All site photos and videos are served from `public/img` and `public/videos` (no hosted asset URLs), so the site deploys anywhere without a CDN proxy.
