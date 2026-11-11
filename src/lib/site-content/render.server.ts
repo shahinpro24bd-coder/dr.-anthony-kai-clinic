@@ -1,4 +1,4 @@
-import { getContentSnapshot, isSiteLang, SITE_LANGS, type SiteLang } from "./server";
+import { getContentSnapshot, isSiteLang, DEFAULT_LANG, SITE_LANGS, type SiteLang } from "./server";
 import { PAGE_SOURCE } from "./pages.server";
 import { renderPage } from "./transform";
 
@@ -24,7 +24,7 @@ export async function renderSitePage(request: Request, slug: string): Promise<Re
     ? langParam
     : cookieLang && isSiteLang(cookieLang)
       ? cookieLang
-      : "en";
+      : DEFAULT_LANG;
 
   const snapshot = await getContentSnapshot(editMode);
   const texts = snapshot.langs[lang];
@@ -64,7 +64,7 @@ export async function renderSitePage(request: Request, slug: string): Promise<Re
   }
   links.push(...SITE_LANGS.map((code) => {
     const href =
-      code === "en" ? url.origin + url.pathname : `${url.origin}${url.pathname}?lang=${code}`;
+      code === DEFAULT_LANG ? url.origin + url.pathname : `${url.origin}${url.pathname}?lang=${code}`;
     return `<link rel="alternate" hreflang="${code}" href="${href}" />`;
   }));
   links.push(`<link rel="alternate" hreflang="x-default" href="${url.origin}${url.pathname}" />`);
