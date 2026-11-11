@@ -1,5 +1,5 @@
 /* Language switcher: modern dropdown.
-   English and Russian — every language is rendered by the
+   English and Arabic — every language is rendered by the
    server (?lang=xx), so choosing one simply navigates to that URL. The design
    of the rest of the page is untouched. */
 (function () {
@@ -7,18 +7,18 @@
   /* Read the language at init time — this bundle may load before the
      bootstrap script that publishes window.__SITE_LANG__. */
   function currentLang() {
-    return window.__SITE_LANG__ || "ru";
+    return window.__SITE_LANG__ || "en";
   }
   function currentLangs() {
-    return (window.__SITE_LANGS__ || ["en", "ru"]).slice();
+    return (window.__SITE_LANGS__ || ["en", "ar"]).slice();
   }
 
   var FLAGS = {
     en: '<img src="/img/flag-english.png" alt="" aria-hidden="true">',
-    ru: '<img src="/img/flag-russia.png" alt="" aria-hidden="true">'
+    ar: '<img src="/img/flag-lebanon.png" alt="" aria-hidden="true">'
   };
 
-  var NAMES = { en: "English", ru: "Русский" };
+  var NAMES = { en: "English", ar: "العربية" };
 
   function flag(code) {
     return FLAGS[code] || "";
@@ -76,14 +76,14 @@
 
     var LANGS = currentLangs();
     var current = currentLang();
-    if (LANGS.indexOf(current) < 0) current = LANGS[0] || "ru";
+    if (LANGS.indexOf(current) < 0) current = LANGS[0] || "en";
 
     var toggle = document.createElement("button");
     toggle.type = "button";
     toggle.className = "lang-toggle";
     toggle.setAttribute("aria-haspopup", "true");
     toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", current === "ru" ? "Выбор языка" : "Select language");
+    toggle.setAttribute("aria-label", current === "ar" ? "اختيار اللغة" : "Select language");
     toggle.innerHTML =
       '<span class="lang-flag">' + flag(current) + "</span>" +
       '<span class="lang-name">' + (NAMES[current] || current) + "</span>" +
