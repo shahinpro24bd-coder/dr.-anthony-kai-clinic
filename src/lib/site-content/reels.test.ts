@@ -11,13 +11,13 @@ describe("home Instagram gallery", () => {
     expect(indexHtml).toContain("https://www.instagram.com/reel/DfSgLGTRBt5/");
   });
 
-  it("opens the gallery with the open-clinic-days post and numbers the cards in order", () => {
+  it("opens the gallery with the "Why general practice" Reel and numbers the cards in order", () => {
     const cards = indexHtml.slice(
       indexHtml.indexOf('<div class="reels-track"'),
       indexHtml.indexOf("</section>", indexHtml.indexOf('<div class="reels-track"')),
     );
     const codes = [...cards.matchAll(/data-reel-play="([^"]+)"/g)].map((m) => m[1]);
-    expect(codes).toEqual(["Ddjm3YZgtM3", "DfSgLGTRBt5", "DdrFmaZihW7", "DdmKpOqgjj_", "DewvEzKAgFs", "DeE91IpCIo2"]);
+    expect(codes).toEqual(["DfSgLGTRBt5", "Ddjm3YZgtM3", "DdrFmaZihW7", "DdmKpOqgjj_", "DewvEzKAgFs", "DeE91IpCIo2"]);
     expect([...cards.matchAll(/<span class="reel-number">(\d\d)<\/span>/g)].map((m) => m[1])).toEqual(["01", "02", "03", "04", "05", "06"]);
   });
 
