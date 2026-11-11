@@ -2183,6 +2183,7 @@ html[lang="ar"] .hero-reference-word {
     .hero-reference-stat span { font-size: 9px; letter-spacing: .02em; }
     .hero-reference-location { font-size: 12px; }
 
+    html[lang="ar"] .hero-reference { min-height: 890px; }
     html[lang="ar"] .hero-reference-kicker { font-size: 13px; letter-spacing: 0; }
     html[lang="ar"] .hero-reference-copy h1 { font-size: 44px; line-height: 1.25; }
     html[lang="ar"] .hero-reference-copy .hero-reference-role { font-size: 15px; letter-spacing: 0; line-height: 1.7; }
@@ -2196,5 +2197,6 @@ html[lang="ar"] .hero-reference-word {
     .hero-reference-copy { top: 48px; }
     .hero-reference-copy h1 { font-size: 41px; }
     .hero-reference-stat span { font-size: 8.5px; }
+    html[lang="ar"] .hero-reference { min-height: 860px; }
     html[lang="ar"] .hero-reference-copy h1 { font-size: 40px; }
 }
