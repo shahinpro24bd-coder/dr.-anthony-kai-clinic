@@ -54,11 +54,12 @@ export async function renderSitePage(request: Request, slug: string): Promise<Re
 
   // SEO: self-referential hreflang alternates for every published language.
   const links: string[] = [];
-  {
+  if (lang === "ar") {
+    // Arabic-designed fonts; the Latin display fonts have no Arabic glyphs.
     links.push(
       '<link rel="preconnect" href="https://fonts.googleapis.com" />' +
         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' +
-        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700&display=swap" />',
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@700&display=swap" />',
     );
   }
   links.push(...SITE_LANGS.map((code) => {

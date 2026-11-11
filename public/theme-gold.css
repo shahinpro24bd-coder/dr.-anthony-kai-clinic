@@ -357,29 +357,30 @@
   .education-heading .mb-3 { font-size: 1.8rem; }
 }
 
-/* Hebrew readability: the Latin display/script fonts have no Hebrew glyphs,
-   so Hebrew pages use Hebrew-designed fonts with no Latin-only styling. */
-html[lang="he"] body,
-html[lang="he"] body *:not(i):not([class*="bi-"]):not([class*="fa-"]):not(.fa):not(.fas):not(.far):not(.fab) {
-  font-family: "Heebo", "Arial Hebrew", Arial, sans-serif !important;
+/* Arabic readability: the Latin display/script fonts have no Arabic glyphs,
+   so Arabic pages use Arabic-designed fonts; letter-spacing would break the
+   joined Arabic letters, so it is reset. */
+html[lang="ar"] body,
+html[lang="ar"] body *:not(i):not([class*="bi-"]):not([class*="fa-"]):not(.fa):not(.fas):not(.far):not(.fab) {
+  font-family: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif !important;
   letter-spacing: normal !important;
   font-style: normal !important;
 }
-html[lang="he"] h1, html[lang="he"] h2, html[lang="he"] h3,
-html[lang="he"] h1 *, html[lang="he"] h2 *, html[lang="he"] h3 *,
-html[lang="he"] [class*="font-dancing"], html[lang="he"] [class*="playfair"] {
-  font-family: "Frank Ruhl Libre", "Heebo", serif !important;
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3,
+html[lang="ar"] h1 *, html[lang="ar"] h2 *, html[lang="ar"] h3 *,
+html[lang="ar"] [class*="font-dancing"], html[lang="ar"] [class*="playfair"] {
+  font-family: "Amiri", "Tajawal", serif !important;
   font-weight: 700 !important;
 }
-html[lang="he"] body { line-height: 1.75; -webkit-font-smoothing: antialiased; }
-html[lang="he"] p, html[lang="he"] li { font-size: max(1em, 16px); font-weight: 400; }
-html[lang="he"] .lang-toggle, html[lang="he"] .lang-menu a { font-size: 13px; }
-/* The big hero word is outlined; in Hebrew make it solid so it reads clearly. */
-html[lang="he"] .hero-reference-word {
+html[lang="ar"] body { line-height: 1.8; -webkit-font-smoothing: antialiased; }
+html[lang="ar"] p, html[lang="ar"] li { font-size: max(1em, 16px); font-weight: 400; }
+html[lang="ar"] .lang-toggle, html[lang="ar"] .lang-menu a { font-size: 13px; }
+/* The big hero word is outlined; in Arabic make it solid so it reads clearly. */
+html[lang="ar"] .hero-reference-word {
   color: #fffaf1 !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: 0 4px 24px rgba(70,42,10,.35) !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
 }
 
 /* Keep the page still while sections animate in after a page/language switch. */
