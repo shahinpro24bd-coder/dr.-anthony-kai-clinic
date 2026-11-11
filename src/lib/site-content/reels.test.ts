@@ -11,7 +11,7 @@ describe("home Instagram gallery", () => {
     expect(indexHtml).toContain("https://www.instagram.com/reel/DfSgLGTRBt5/");
   });
 
-  it("opens the gallery with the "Why general practice" Reel and numbers the cards in order", () => {
+  it("opens the gallery with the Why general practice Reel and numbers the cards in order", () => {
     const cards = indexHtml.slice(
       indexHtml.indexOf('<div class="reels-track"'),
       indexHtml.indexOf("</section>", indexHtml.indexOf('<div class="reels-track"')),
