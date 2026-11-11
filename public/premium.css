@@ -364,3 +364,5 @@ html[dir="rtl"] body .treatments-premium-section .ser16 i{transform:scaleX(-1)}
 body .treatments-premium-section .ser11,
 body .treatments-premium-section .ser13,
 body .treatments-premium-section .ser5{unicode-bidi:plaintext}
+html[dir="rtl"] body .cred-custom-card::before{right:auto;left:1.2rem}
+html[dir="rtl"] body .membership-card::before{right:auto;left:.7rem}

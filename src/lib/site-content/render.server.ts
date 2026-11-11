@@ -19,12 +19,12 @@ export async function renderSitePage(request: Request, slug: string): Promise<Re
   const langParam = url.searchParams.get("lang") || "";
   const cookieLang = request.headers
     .get("cookie")
-    ?.match(/(?:^|;\s*)site_lang=(en|ru)(?:;|$)/)?.[1];
+    ?.match(/(?:^|;\s*)site_lang=(en|ar)(?:;|$)/)?.[1];
   const lang: SiteLang = isSiteLang(langParam)
     ? langParam
     : cookieLang && isSiteLang(cookieLang)
       ? cookieLang
-      : "ru";
+      : "en";
 
   const snapshot = await getContentSnapshot(editMode);
   const texts = snapshot.langs[lang];
@@ -54,16 +54,17 @@ export async function renderSitePage(request: Request, slug: string): Promise<Re
 
   // SEO: self-referential hreflang alternates for every published language.
   const links: string[] = [];
-  {
+  if (lang === "ar") {
+    // Arabic-designed fonts; the Latin display fonts have no Arabic glyphs.
     links.push(
       '<link rel="preconnect" href="https://fonts.googleapis.com" />' +
         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' +
-        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700&display=swap" />',
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" />',
     );
   }
   links.push(...SITE_LANGS.map((code) => {
     const href =
-      code === "ru" ? url.origin + url.pathname : `${url.origin}${url.pathname}?lang=${code}`;
+      code === "en" ? url.origin + url.pathname : `${url.origin}${url.pathname}?lang=${code}`;
     return `<link rel="alternate" hreflang="${code}" href="${href}" />`;
   }));
   links.push(`<link rel="alternate" hreflang="x-default" href="${url.origin}${url.pathname}" />`);

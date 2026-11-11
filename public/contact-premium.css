@@ -23,9 +23,9 @@ body.contact-editorial .appo2{max-width:1180px;margin:0 auto;display:grid;grid-t
 body.contact-editorial .appo3{max-width:none;display:flex}
 body.contact-editorial .appo4{width:100%;border:0;border-radius:0;box-shadow:none;transition:none}
 body.contact-editorial .appo4:hover{transform:none;box-shadow:none}
-body.contact-editorial .appo5{padding:44px 48px 30px;text-align:left;background:var(--contact-surface);color:var(--contact-ink);border-bottom:1px solid var(--contact-line)}
+body.contact-editorial .appo5{padding:44px 48px 30px;text-align:start;background:var(--contact-surface);color:var(--contact-ink);border-bottom:1px solid var(--contact-line)}
 body.contact-editorial .appo5::before{content:"Private consultation";display:block;margin-bottom:.8rem;color:var(--contact-gold-deep);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
-html[lang="bn"] body.contact-editorial .appo5::before{content:"ব্যক্তিগত পরামর্শ";letter-spacing:.08em}
+html[lang="ar"] body.contact-editorial .appo5::before{content:"استشارة خاصة";letter-spacing:normal}
 body.contact-editorial .appo5 h2{margin:0 0 .55rem;font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3rem);font-weight:500;color:var(--contact-ink)!important}
 body.contact-editorial .appo5 p{max-width:520px;margin:0;color:var(--contact-copy);font-size:.92rem;line-height:1.7}
 body.contact-editorial .appo6{padding:38px 48px 48px}
