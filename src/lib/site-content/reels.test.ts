@@ -11,6 +11,25 @@ describe("home Instagram gallery", () => {
     expect(indexHtml).toContain("https://www.instagram.com/reel/DfSgLGTRBt5/");
   });
 
+  it("opens the gallery with the open-clinic-days post and numbers the cards in order", () => {
+    const cards = indexHtml.slice(
+      indexHtml.indexOf('<div class="reels-track"'),
+      indexHtml.indexOf("</section>", indexHtml.indexOf('<div class="reels-track"')),
+    );
+    const codes = [...cards.matchAll(/data-reel-play="([^"]+)"/g)].map((m) => m[1]);
+    expect(codes).toEqual(POSTS.map((p) => (p === "Ddjm3YZgtM3" ? "DfSgLGTRBt5" : p === "DfSgLGTRBt5" ? "Ddjm3YZgtM3" : p)));
+    expect([...cards.matchAll(/<span class="reel-number">(\d\d)<\/span>/g)].map((m) => m[1])).toEqual(["01", "02", "03", "04", "05", "06"]);
+  });
+
+  it("closes the video section so the footer sits outside it", () => {
+    const sectionEnd = indexHtml.indexOf("</section>", indexHtml.indexOf('<section class="reels-section"'));
+    const footerStart = indexHtml.indexOf('<div class="container-fluid footer');
+    expect(sectionEnd).toBeGreaterThan(0);
+    expect(sectionEnd).toBeLessThan(footerStart);
+    expect(indexHtml).toContain("reels-swipe-hint");
+    expect(indexHtml).toContain('class="reels-follow" href="https://www.instagram.com/dr.anthonykai/"');
+  });
+
   it("plays the downloaded Reel directly without an Instagram player", () => {
     const button = indexHtml.match(/<button[^>]+data-reel-play="DfSgLGTRBt5"[^>]*>/)?.[0];
     expect(button).toContain('data-reel-src="/videos/why-general-practice.mp4"');
