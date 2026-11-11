@@ -17,7 +17,7 @@ describe("home Instagram gallery", () => {
       indexHtml.indexOf("</section>", indexHtml.indexOf('<div class="reels-track"')),
     );
     const codes = [...cards.matchAll(/data-reel-play="([^"]+)"/g)].map((m) => m[1]);
-    expect(codes).toEqual(POSTS.map((p) => (p === "Ddjm3YZgtM3" ? "DfSgLGTRBt5" : p === "DfSgLGTRBt5" ? "Ddjm3YZgtM3" : p)));
+    expect(codes).toEqual(["Ddjm3YZgtM3", "DfSgLGTRBt5", "DdrFmaZihW7", "DdmKpOqgjj_", "DewvEzKAgFs", "DeE91IpCIo2"]);
     expect([...cards.matchAll(/<span class="reel-number">(\d\d)<\/span>/g)].map((m) => m[1])).toEqual(["01", "02", "03", "04", "05", "06"]);
   });
 
